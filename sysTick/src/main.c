@@ -1,28 +1,9 @@
-/*
-**
-**                           Main.c
-**
-**
-**********************************************************************/
-/*
-   Last committed:     $Revision: 00 $
-   Last changed by:    $Author: $
-   Last changed date:  $Date:  $
-   ID:                 $Id:  $
 
-**********************************************************************/
 #include <stm32f30x_conf.h>
-/* Private variables ---------------------------------------------------------*/
+
 RCC_ClocksTypeDef RCC_Clocks;
 uint32_t sysTickFlag = 0;
 
-/* Private functions ---------------------------------------------------------*/
-
-/**
-  * @brief  This function handles SysTick Handler.
-  * @param  None
-  * @retval None
-  */
 void SysTick_Handler(void)
 {
 	sysTickFlag = 1;
@@ -42,11 +23,7 @@ void init(void)
 	GPIO_Init(GPIOE, &GPIO_InitStructure);
 }
 
-/**
-  * @brief  Main program.
-  * @param  None
-  * @retval None
-  */
+
 int main(void)
 {
   /* SysTick end of count event each 100ms */
